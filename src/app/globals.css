@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-plum: #32124a;
+  --color-coral: #ee7867;
+  --font-headline: var(--font-headline-src), "Segoe UI", sans-serif;
+  --font-body: var(--font-body-src), system-ui, sans-serif;
+}
+
+html,
+body {
+  background: #32124a;
+  color: #fff;
+  margin: 0;
+  overflow-x: hidden;
+}
