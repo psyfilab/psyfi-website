@@ -13,10 +13,10 @@ const NAV_LINKS = [
 /* Canvas: 2-col grid (content | nav) below lg, fixed 100x73 unit stage (--u) on lg+ */
 function Stage({ children }: { children: ReactNode }) {
   return (
-    <main className="min-h-dvh w-full bg-plum lg:flex lg:h-dvh lg:justify-center lg:overflow-hidden">
+    <div className="h-dvh w-full overflow-hidden bg-plum lg:flex lg:justify-center">
       <div
         className="
-          relative grid min-h-dvh w-full grid-cols-[minmax(0,1fr)_auto] content-start
+          relative grid h-dvh w-full grid-cols-[minmax(0,1fr)_auto] content-start
           gap-x-4 px-[14.5%] pb-10 pt-[20vw]
           lg:block lg:min-h-0 lg:p-0
           lg:[--u:min(1vw,1.37dvh)]
@@ -25,7 +25,7 @@ function Stage({ children }: { children: ReactNode }) {
       >
         {children}
       </div>
-    </main>
+    </div>
   );
 }
 

@@ -3,8 +3,15 @@
 @theme inline {
   --color-plum: #32124a;
   --color-coral: #ee7867;
+  --color-coral-soft: #df7d6c;
   --font-headline: var(--font-headline-src), "Segoe UI", sans-serif;
   --font-body: var(--font-body-src), system-ui, sans-serif;
+  --font-display: var(--font-display-src), "Arial Narrow", sans-serif;
+}
+
+/* `clip` (not `hidden`) so the page never becomes a scroll container, which would break position: sticky */
+html {
+  overflow-x: clip;
 }
 
 html,
@@ -12,5 +19,4 @@ body {
   background: #32124a;
   color: #fff;
   margin: 0;
-  overflow-x: hidden;
 }

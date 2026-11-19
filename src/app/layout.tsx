@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Source_Sans_3, Hanken_Grotesk } from "next/font/google";
+import { Source_Sans_3, Hanken_Grotesk, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 
 const headline = Source_Sans_3({
@@ -14,6 +14,12 @@ const body = Hanken_Grotesk({
   variable: "--font-body-src",
 });
 
+const display = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["800"],
+  variable: "--font-display-src",
+});
+
 export const metadata: Metadata = {
   title: "Psyfi",
   description: "You're not missing data. You're missing behavioural insight.",
@@ -21,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${headline.variable} ${body.variable}`}>
+    <html lang="en" className={`${headline.variable} ${body.variable} ${display.variable}`}>
       <body>{children}</body>
     </html>
   );
