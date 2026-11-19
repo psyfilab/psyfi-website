@@ -16,8 +16,13 @@ import {
     type MotionValue,
 } from "motion/react";
 
-const RADIUS = 32;
-const SHADOW_ON = "0px -24px 60px rgba(0,0,0,0.35)";
+/* Tuning knobs. Current look: seamless slide, no dimming, no card edge.
+   For the "card" look use RADIUS 32, SCALE 0.94, DIM 0.55, SHADOW_ON "0px -24px 60px rgba(0,0,0,0.35)". */
+const RADIUS = 0;
+const SCALE = 1; // sheet underneath shrinks to this
+const SHIFT = 12; // sheet underneath drifts up this many dvh (slower than the incoming sheet = parallax)
+const DIM = 1; // brightness of the sheet underneath when fully covered (1 = no dimming)
+const SHADOW_ON = "0px -24px 60px rgba(0,0,0,0)";
 const SHADOW_OFF = "0px -24px 60px rgba(0,0,0,0)";
 
 /** 0 -> 1 while this sheet slides up over the previous one (always 1 for the first sheet). */
@@ -49,11 +54,11 @@ function Sheet({ index, count, progress, reduce, children }: SheetProps) {
         last ? [0, 0] : [0, 1],
     );
 
-    const scale = useTransform(covered, [0, 1], [1, reduce ? 1 : 0.94]);
-    const y = useTransform(covered, [0, 1], ["0dvh", reduce ? "0dvh" : "-4dvh"]);
+    const scale = useTransform(covered, [0, 1], [1, reduce ? 1 : SCALE]);
+    const y = useTransform(covered, [0, 1], ["0dvh", reduce ? "0dvh" : `-${SHIFT}dvh`]);
     const filter = useTransform(covered, [0, 1], [
         "brightness(1)",
-        `brightness(${reduce ? 1 : 0.55})`,
+        `brightness(${reduce ? 1 : DIM})`,
     ]);
     const radius = useTransform([arrival, covered], ([a, c]: number[]) =>
         reduce ? 0 : Math.max(RADIUS * (1 - a), RADIUS * c),
