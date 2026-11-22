@@ -25,10 +25,19 @@ type ButtonProps = {
   href?: string;
   /** Opens the "Book a diagnostic" dialog instead of navigating */
   opensDiagnostic?: boolean;
+  /** Open the link in a new browser tab */
+  newTab?: boolean;
   children: ReactNode;
 };
 
-export function Button({ href, variant, arrow = false, opensDiagnostic = false, children }: ButtonProps) {
+export function Button({
+  href,
+  variant,
+  arrow = false,
+  opensDiagnostic = false,
+  newTab = false,
+  children,
+}: ButtonProps) {
   const { open } = useDiagnostic();
   const className = `group inline-flex items-center justify-center gap-2.5 whitespace-nowrap transition duration-200 ${variants[variant]}`;
   const content = (
@@ -49,7 +58,11 @@ export function Button({ href, variant, arrow = false, opensDiagnostic = false, 
   }
 
   return (
-    <a href={href} className={className}>
+    <a
+      href={href}
+      className={className}
+      {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+    >
       {content}
     </a>
   );

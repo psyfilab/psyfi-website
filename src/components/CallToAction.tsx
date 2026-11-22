@@ -1,6 +1,7 @@
 import { Container } from "./Container";
 import { Button } from "./Button";
 import { Reveal } from "./Reveal";
+import { TALK_TO_LAB_URL } from "@/lib/config";
 
 export function CallToAction() {
   return (
@@ -29,7 +30,7 @@ export function CallToAction() {
                 <Button opensDiagnostic variant="primary" arrow>
                   Book a diagnostic
                 </Button>
-                <Button href="mailto:shreya@psyfilab.com" variant="white">
+                <Button href={TALK_TO_LAB_URL} newTab variant="white">
                   Talk to the lab
                 </Button>
               </div>
