@@ -5,6 +5,7 @@ import { Method } from "@/components/Method";
 import { Product } from "@/components/Product";
 import { CallToAction } from "@/components/CallToAction";
 import { Footer } from "@/components/Footer";
+import { ContactWidget } from "@/components/ContactWidget";
 import { DiagnosticProvider } from "@/components/DiagnosticModal";
 import { TeamProvider } from "@/components/TeamSheet";
 import { MotionRoot } from "@/components/MotionRoot";
@@ -23,6 +24,7 @@ export default function Page() {
             <CallToAction />
           </main>
           <Footer />
+          <ContactWidget />
         </TeamProvider>
       </DiagnosticProvider>
     </MotionRoot>
