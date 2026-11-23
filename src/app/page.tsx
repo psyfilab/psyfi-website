@@ -7,6 +7,8 @@ import { CallToAction } from "@/components/CallToAction";
 import { Footer } from "@/components/Footer";
 import { DiagnosticProvider } from "@/components/DiagnosticModal";
 import { MotionRoot } from "@/components/MotionRoot";
+import { ContactWidget } from "@/components/ContactWidget";
+
 
 export default function Page() {
   return (
@@ -21,6 +23,7 @@ export default function Page() {
           <CallToAction />
         </main>
         <Footer />
+        <ContactWidget />
       </DiagnosticProvider>
     </MotionRoot>
   );
