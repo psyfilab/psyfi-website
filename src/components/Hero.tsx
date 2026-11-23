@@ -54,7 +54,7 @@ export function Hero() {
 
         <Reveal delay={0.25}>
           <p className="mt-8 max-w-[565px] text-[20px] leading-[1.6] text-muted">
-            PSYFI converts user behaviour into standardized decision signals — so your fintech or
+            PSYFI converts user behaviour into standardized decision signals, so your fintech or
             healthtech can price risk, predict adherence, and improve acquisition quality with
             confidence.
           </p>

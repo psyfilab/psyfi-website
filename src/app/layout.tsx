@@ -21,7 +21,7 @@ const mono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PsyFi — Behavioural intelligence layer",
+  title: "PsyFi | Behavioural intelligence layer",
   description:
     "PSYFI converts user behaviour into standardized decision signals so your fintech or healthtech can price risk, predict adherence, and improve acquisition quality with confidence.",
 };

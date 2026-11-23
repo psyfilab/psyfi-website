@@ -70,7 +70,7 @@ export function Product() {
             </Reveal>
             <Reveal delay={0.16}>
               <p className="mt-5 max-w-[600px] text-[18px] leading-[1.7] text-muted">
-                The Behavioural Intelligence Dashboard — engagement scores, behavioural user
+                The Behavioural Intelligence Dashboard: engagement scores, behavioural user
                 profiles, adoption-likelihood, sector-fit, and nudge-sensitivity heatmaps.
               </p>
             </Reveal>

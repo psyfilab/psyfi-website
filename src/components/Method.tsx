@@ -8,19 +8,19 @@ const STEPS: { tag: string; title: string; body: string; icon: ReactNode }[] = [
   {
     tag: "Decode",
     title: "Spot hidden friction",
-    body: "Identify behavioural bottlenecks across your funnel using quantitative and qualitative signal — the moments of hesitation, doubt, and effort.",
+    body: "Identify behavioural bottlenecks across your funnel using quantitative and qualitative signal, the moments of hesitation, doubt, and effort.",
     icon: <SearchIcon className="size-[22px]" />,
   },
   {
     tag: "Design",
     title: "Nudges that convert",
-    body: "Co-develop tailored, behaviour-driven interventions that boost engagement, retention, and trust. Make users want to say yes.",
+    body: "Co-develop tailored, behaviour driven interventions that boost engagement, retention, and trust. Make users want to say yes.",
     icon: <NudgeIcon className="size-[22px]" />,
   },
   {
     tag: "Iterate",
     title: "Measure the shift",
-    body: "Implement, track behavioural KPIs, and refine for measurable impact — from drop-off to behaviour change in 90-day sprints.",
+    body: "Implement, track behavioural KPIs, and refine for measurable impact, from drop-off to behaviour change in 90-day sprints.",
     icon: <ChartIcon className="size-[22px]" />,
   },
 ];
@@ -42,7 +42,7 @@ export function Method() {
         <Reveal delay={0.16}>
           <p className="mt-5 max-w-[640px] text-[18px] leading-[1.7] text-muted">
             Dashboards tell you who is persuadable. PSYFI models why people act, how they feel, and
-            when trust breaks — then designs for it.
+            when trust breaks, then designs for it.
           </p>
         </Reveal>
 

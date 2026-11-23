@@ -170,7 +170,7 @@ function Modal({ onClose }: { onClose: () => void }) {
                         </p>
 
                         <form onSubmit={onSubmit} className="mt-6 flex flex-col gap-3">
-                            <input type="hidden" name="_subject" value="New diagnostic request — PsyFi website" />
+                            <input type="hidden" name="_subject" value="New diagnostic request: PsyFi website" />
                             {/* honeypot: hidden from people, bots fill it in */}
                             <input
                                 type="text"
