@@ -93,32 +93,16 @@ function PersonCard({ person, delay }: { person: Person; delay: number }) {
                         draggable={false}
                         className="size-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.05]"
                     />
-                    <div
-                        aria-hidden
-                        className="absolute inset-0 bg-gradient-to-t from-plum/35 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    />
-                    <span className="absolute bottom-3 right-3 grid size-10 place-items-center rounded-full bg-white text-plum shadow-[0_6px_18px_-4px_rgba(0,0,0,0.45)] transition-all duration-300 group-hover:scale-110 group-hover:bg-coral group-hover:text-white">
-                        <LinkedInGlyph className="size-[18px]" />
-                    </span>
                 </div>
 
-                <h3 className="mt-5 flex items-start gap-1.5 text-[17px] font-semibold leading-[1.2] tracking-[-0.01em] text-ink transition-colors duration-300 [font-family:var(--font-heading)] group-hover:text-coral-ink sm:text-[20px]">
-                    <span>{person.name}</span>
-                    <svg
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        aria-hidden
-                        className="mt-[3px] size-4 shrink-0 -translate-x-1 translate-y-1 text-coral opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100"
-                    >
-                        <path
-                            d="M4.5 11.5l7-7M5.5 4.5h6v6"
-                            stroke="currentColor"
-                            strokeWidth="1.6"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                    </svg>
-                </h3>
+                <div className="mt-5 flex items-start justify-between gap-3">
+                    <h3 className="text-[17px] font-semibold leading-[1.2] tracking-[-0.01em] text-ink transition-colors duration-300 [font-family:var(--font-heading)] group-hover:text-coral-ink sm:text-[20px]">
+                        {person.name}
+                    </h3>
+                    <span className="mt-px grid size-7 shrink-0 place-items-center rounded-full border border-line bg-white text-plum transition-all duration-300 group-hover:border-coral group-hover:bg-coral group-hover:text-white">
+                        <LinkedInGlyph className="size-[14px]" />
+                    </span>
+                </div>
                 <p className="mt-1.5 text-[13.5px] font-medium leading-[1.4] text-plum sm:text-[14.5px]">
                     {person.role}
                 </p>
