@@ -6,6 +6,7 @@ import { Container } from "./Container";
 import { Logo } from "./Logo";
 import { Button } from "./Button";
 import { MobileMenu } from "./MobileMenu";
+import { useTeam } from "./TeamSheet";
 
 const NAV = [
   { label: "Method", href: "#method" },
@@ -16,6 +17,7 @@ const NAV = [
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const team = useTeam();
   const { scrollY } = useScroll();
   useMotionValueEvent(scrollY, "change", (y) => setScrolled(y > 8));
 
@@ -40,6 +42,14 @@ export function Header() {
               <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-coral transition-transform duration-300 group-hover:scale-x-100" />
             </a>
           ))}
+          <button
+            type="button"
+            onClick={team.open}
+            className="group relative py-1 text-[15px] font-medium text-nav transition-colors hover:text-plum"
+          >
+            Team
+            <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-coral transition-transform duration-300 group-hover:scale-x-100" />
+          </button>
         </nav>
 
         <div className="flex items-center gap-2 justify-self-end">

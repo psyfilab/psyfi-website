@@ -6,24 +6,24 @@ import { Product } from "@/components/Product";
 import { CallToAction } from "@/components/CallToAction";
 import { Footer } from "@/components/Footer";
 import { DiagnosticProvider } from "@/components/DiagnosticModal";
+import { TeamProvider } from "@/components/TeamSheet";
 import { MotionRoot } from "@/components/MotionRoot";
-import { ContactWidget } from "@/components/ContactWidget";
-
 
 export default function Page() {
   return (
     <MotionRoot>
       <DiagnosticProvider>
-        <Header />
-        <main>
-          <Hero />
-          <Stats />
-          <Method />
-          <Product />
-          <CallToAction />
-        </main>
-        <Footer />
-        <ContactWidget />
+        <TeamProvider>
+          <Header />
+          <main>
+            <Hero />
+            <Stats />
+            <Method />
+            <Product />
+            <CallToAction />
+          </main>
+          <Footer />
+        </TeamProvider>
       </DiagnosticProvider>
     </MotionRoot>
   );

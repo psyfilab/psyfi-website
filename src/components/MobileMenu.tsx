@@ -3,12 +3,14 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { CloseIcon, MenuIcon } from "./Icons";
+import { useTeam } from "./TeamSheet";
 
 type MobileMenuProps = { links: { label: string; href: string }[] };
 
 /** Hamburger menu, shown below the md breakpoint only. */
 export function MobileMenu({ links }: MobileMenuProps) {
     const [open, setOpen] = useState(false);
+    const team = useTeam();
 
     useEffect(() => {
         if (!open) return;
@@ -56,6 +58,23 @@ export function MobileMenu({ links }: MobileMenuProps) {
                                     </a>
                                 </motion.li>
                             ))}
+                            <motion.li
+                                initial={{ opacity: 0, x: -8 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.04 * links.length + 0.05, duration: 0.25 }}
+                                className="border-b border-line last:border-0"
+                            >
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        setOpen(false);
+                                        team.open();
+                                    }}
+                                    className="block w-full py-3.5 text-left text-[17px] font-medium text-nav"
+                                >
+                                    Team
+                                </button>
+                            </motion.li>
                         </ul>
                     </motion.nav>
                 )}

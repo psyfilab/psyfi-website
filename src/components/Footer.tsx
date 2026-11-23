@@ -1,5 +1,6 @@
 import { Container } from "./Container";
 import { Logo } from "./Logo";
+import { TeamLink } from "./TeamSheet";
 
 const COLUMNS = [
   {
@@ -7,7 +8,7 @@ const COLUMNS = [
     links: ["PsyFi OS", "Engagement Intelligence", "Pattern Library", "Data Graph"],
   },
   { title: "Markets", links: ["Fintech & BFSI", "Healthtech", "India landscape"] },
-  { title: "Lab", links: ["Method", "Evidence", "Advisors", "Contact"] },
+  { title: "Lab", links: ["Method", "Evidence", "Team", "Contact"] },
 ];
 
 const LINK_TARGETS: Record<string, string> = {
@@ -41,12 +42,18 @@ export function Footer() {
                 <ul className="mt-[22px] flex flex-col gap-[7px]">
                   {links.map((label) => (
                     <li key={label}>
-                      <a
-                        href={LINK_TARGETS[label] ?? "#top"}
-                        className="text-[16px] leading-6 text-[#3a2a4d] transition-colors hover:text-coral-ink"
-                      >
-                        {label}
-                      </a>
+                      {label === "Team" ? (
+                        <TeamLink className="text-left text-[16px] leading-6 text-[#3a2a4d] transition-colors hover:text-coral-ink">
+                          {label}
+                        </TeamLink>
+                      ) : (
+                        <a
+                          href={LINK_TARGETS[label] ?? "#top"}
+                          className="text-[16px] leading-6 text-[#3a2a4d] transition-colors hover:text-coral-ink"
+                        >
+                          {label}
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>
