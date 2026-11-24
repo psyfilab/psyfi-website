@@ -115,3 +115,37 @@ section[id] {
     animation: shimmer 3.5s linear infinite;
   }
 }
+
+/* Partner logos: slide continuously from right to left */
+.partners-dup {
+  display: none;
+}
+
+.partners-extra {
+  display: none;
+}
+
+@keyframes partners-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .partners {
+    justify-content: flex-start;
+  }
+
+  .partners-dup {
+    display: flex;
+  }
+
+  .partners-extra {
+    display: block;
+  }
+
+  .partners-track {
+    animation: partners-scroll 32s linear infinite;
+  }
+
+}

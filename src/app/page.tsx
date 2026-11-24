@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { Stats } from "@/components/Stats";
 import { Method } from "@/components/Method";
 import { Product } from "@/components/Product";
+import { Partners } from "@/components/Partners";
 import { CallToAction } from "@/components/CallToAction";
 import { Footer } from "@/components/Footer";
 import { ContactWidget } from "@/components/ContactWidget";
@@ -21,6 +22,7 @@ export default function Page() {
             <Stats />
             <Method />
             <Product />
+            <Partners />
             <CallToAction />
           </main>
           <Footer />
