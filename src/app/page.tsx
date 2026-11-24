@@ -10,6 +10,7 @@ import { ContactWidget } from "@/components/ContactWidget";
 import { DiagnosticProvider } from "@/components/DiagnosticModal";
 import { TeamProvider } from "@/components/TeamSheet";
 import { MotionRoot } from "@/components/MotionRoot";
+import { Process } from "@/components/Process";
 
 export default function Page() {
   return (
@@ -22,6 +23,7 @@ export default function Page() {
             <Stats />
             <Method />
             <Product />
+            <Process />
             <Partners />
             <CallToAction />
           </main>

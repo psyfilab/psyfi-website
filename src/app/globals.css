@@ -149,3 +149,23 @@ section[id] {
   }
 
 }
+
+/* Process: the letters of DESIGN fade to coral in a wave */
+@keyframes letter-wave {
+
+  0%,
+  100% {
+    color: #fff;
+  }
+
+  50% {
+    color: var(--color-coral);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wave-letter {
+    animation: letter-wave 3.2s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.18s);
+  }
+}
